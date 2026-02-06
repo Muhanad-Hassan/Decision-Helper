@@ -22,6 +22,7 @@
             <li><a href="#" class="nav-btn" onclick="showPage('helper')">Helper Tool</a></li>
             <li><a href="#" class="nav-btn" onclick="showPage('about')">About</a></li>
             <li><a href="#" class="nav-btn" onclick="showPage('how-it-works')">How it Works</a></li>
+            <li><a href="#" class="nav-btn" onclick="showPage('resources')">Resources</a></li>
             <li><a href="#" class="nav-btn" onclick="showPage('contact')">Contact</a></li>
         </ul>
         <div class="hamburger" onclick="toggleMenu()">
@@ -36,7 +37,8 @@
             <div class="hero-section">
                 <div class="hero-content">
                     <h1>Are you confused about <span class="highlight">making decisions?</span></h1>
-                    <p>Make decision-making simple and enjoyable using DecisionHelper. We help you choose with confidence.</p>
+                    <p>Make decision-making simple and enjoyable using DecisionHelper. We help you choose with
+                        confidence.</p>
                     <div class="hero-buttons">
                         <button class="primary-btn" onclick="showPage('helper')">Start Here</button>
                         <button class="secondary-btn" onclick="showPage('how-it-works')">Learn More</button>
@@ -74,6 +76,35 @@
                 </div>
             </div>
 
+            <!-- Testimonials Section (New) -->
+            <div class="testimonials-section">
+                <h2>What our users say</h2>
+                <div class="underline"></div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="user-avatar"
+                            style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg')"></div>
+                        <p class="quote">"This tool saved me hours of overthinking. The logic is solid!"</p>
+                        <h4>Sarah Jenkins</h4>
+                        <span class="role">Entrepreneur</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="user-avatar"
+                            style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                        <p class="quote">"I love the integrity score. It forces you to be honest with yourself."</p>
+                        <h4>David Chen</h4>
+                        <span class="role">Student</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="user-avatar"
+                            style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg')"></div>
+                        <p class="quote">"Simple, beautiful, and effective. The best decision app I've used."</p>
+                        <h4>Elena Rodriguez</h4>
+                        <span class="role">Designer</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Bottom CTA -->
             <div class="cta-banner">
                 <h2>Ready to get started?</h2>
@@ -89,12 +120,56 @@
                     <h2><i class="fas fa-balance-scale"></i> Decision Helper</h2>
                     <p>Enter the two options you want to compare and DecisionHelper will choose for you.</p>
 
-                    <div class="input-group">
-                        <input type="text" id="option1" placeholder="First Option (e.g. Pizza)">
-                    </div>
+                    <div class="options-grid">
+                        <!-- Option 1 Card -->
+                        <div class="option-card">
+                            <h3>Option 1</h3>
+                            <input type="text" id="option1" placeholder="Name (e.g. Learn Python)">
 
-                    <div class="input-group">
-                        <input type="text" id="option2" placeholder="Second Option (e.g. Burger)">
+                            <div class="slider-group">
+                                <label>Long-term Value <span id="val1-value">5</span>/10</label>
+                                <input type="range" id="opt1-long" min="1" max="10" value="5"
+                                    oninput="document.getElementById('val1-value').textContent = this.value">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>Immediate Joy <span id="joy1-value">5</span>/10</label>
+                                <input type="range" id="opt1-joy" min="1" max="10" value="5"
+                                    oninput="document.getElementById('joy1-value').textContent = this.value">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>Effort Required <span id="eff1-value">5</span>/10</label>
+                                <input type="range" id="opt1-effort" min="1" max="10" value="5"
+                                    oninput="document.getElementById('eff1-value').textContent = this.value">
+                                <small class="hint">(1 = Easy, 10 = Hard)</small>
+                            </div>
+                        </div>
+
+                        <!-- Option 2 Card -->
+                        <div class="option-card">
+                            <h3>Option 2</h3>
+                            <input type="text" id="option2" placeholder="Name (e.g. Learn Java)">
+
+                            <div class="slider-group">
+                                <label>Long-term Value <span id="val2-value">5</span>/10</label>
+                                <input type="range" id="opt2-long" min="1" max="10" value="5"
+                                    oninput="document.getElementById('val2-value').textContent = this.value">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>Immediate Joy <span id="joy2-value">5</span>/10</label>
+                                <input type="range" id="opt2-joy" min="1" max="10" value="5"
+                                    oninput="document.getElementById('joy2-value').textContent = this.value">
+                            </div>
+
+                            <div class="slider-group">
+                                <label>Effort Required <span id="eff2-value">5</span>/10</label>
+                                <input type="range" id="opt2-effort" min="1" max="10" value="5"
+                                    oninput="document.getElementById('eff2-value').textContent = this.value">
+                                <small class="hint">(1 = Easy, 10 = Hard)</small>
+                            </div>
+                        </div>
                     </div>
 
                     <button id="decideBtn" class="primary-btn full-width">Decide</button>
@@ -161,38 +236,131 @@
                     </div>
                 </div>
             </div>
-           
-                <div class="about-cta">
-                    <h2>Ready to decide better?</h2>
-                    <p>Join over 200,000 people who have automated their daily choices.</p>
-                    <div class="cta-buttons">
-                        <button class="primary-btn" onclick="showPage('helper')">Try Helper Tool</button>
-                        <button class="secondary-btn" onclick="showPage('contact')">Contact Sales</button>
-                    </div>
+
+            <div class="about-cta">
+                <h2>Ready to decide better?</h2>
+                <p>Join over 200,000 people who have automated their daily choices.</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="showPage('helper')">Try Helper Tool</button>
+                    <button class="secondary-btn" onclick="showPage('contact')">Contact Sales</button>
                 </div>
+            </div>
+
+            
+            <!-- Philosophy Section (New) -->
+            <div class="philosophy-section">
+                <div class="glass-panel">
+                    <h3><i class="fas fa-quote-left"></i> Our Philosophy</h3>
+                    <p>"We believe that a good decision is not about the outcome, but the process. By applying logic and
+                        integrity to your choices, you build a life you can be proud of."</p>
+                </div>
+            </div>
             </div>
         </section>
 
         <!-- HOW IT WORKS -->
         <section id="how-it-works" class="page">
             <div class="content-container">
-                <div class="glass-panel">
+                <div class="glass-panel wide-panel">
                     <h2>How It Works</h2>
+                    <p class="subtitle">Our decision engine balances three key metrics to give you an objective
+                        "Integrity Score".</p>
 
-                    <div class="steps-container">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <p>Enter the two options you want to compare.</p>
+                    <div class="timeline-container">
+                        <!-- Step 1 -->
+                        <div class="timeline-step">
+                            <div class="step-icon">
+                                <i class="fas fa-list-ul"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>1. Define Options</h3>
+                                <p>Enter the two choices you are debating. Give them clear names.</p>
+                            </div>
                         </div>
 
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <p>Click the “Decide” button.</p>
+                        <!-- Step 2 -->
+                        <div class="timeline-step">
+                            <div class="step-icon highlight-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>2. Rate Metrics</h3>
+                                <p>Rate each option from 1-10 on:</p>
+                                <ul class="metrics-list">
+                                    <li><i class="fas fa-chart-line"></i> <strong>Value:</strong> Long-term benefit.
+                                    </li>
+                                    <li><i class="fas fa-smile"></i> <strong>Joy:</strong> Immediate happiness.</li>
+                                    <li><i class="fas fa-dumbbell"></i> <strong>Effort:</strong> Work required.</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <p>Get your result instantly.</p>
+                        <!-- Step 3 -->
+                        <div class="timeline-step">
+                            <div class="step-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>3. The Logic</h3>
+                                <p>We calculate an <strong>Integrity Score</strong>: <em>(Value × 2) + Joy -
+                                        Effort</em>. Logic beats emotion!</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="timeline-step">
+                            <div class="step-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div class="step-content">
+                                <h3>4. The Verdict</h3>
+                                <p>We analyze the scores and give you a rational justification for the winner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOURCES PAGE (New) -->
+        <section id="resources" class="page">
+            <div class="content-container">
+                <div class="glass-panel wide-panel">
+                    <h2><i class="fas fa-book-reader"></i> Learning Resources</h2>
+                    <p class="subtitle">Master the art of decision making with these curated reads.</p>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <div class="res-icon"><i class="fas fa-book"></i></div>
+                            <div class="res-content">
+                                <h3>Thinking, Fast and Slow</h3>
+                                <p class="author">by Daniel Kahneman</p>
+                                <span class="tag">Psychology</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="res-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="res-content">
+                                <h3>Essentialism</h3>
+                                <p class="author">by Greg McKeown</p>
+                                <span class="tag">Productivity</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="res-icon"><i class="fas fa-brain"></i></div>
+                            <div class="res-content">
+                                <h3>Atomic Habits</h3>
+                                <p class="author">by James Clear</p>
+                                <span class="tag">Self-Help</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="res-icon"><i class="fas fa-chess-knight"></i></div>
+                            <div class="res-content">
+                                <h3>Principles</h3>
+                                <p class="author">by Ray Dalio</p>
+                                <span class="tag">Business</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -237,18 +405,18 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label>First Name</label>
-                                <input type="text" placeholder="Muhanad">
+                                <input type="text" id="contact-fname" placeholder="Muhanad">
                             </div>
 
                             <div class="form-group">
                                 <label>Last Name</label>
-                                <input type="text" placeholder="Hassan">
+                                <input type="text" id="contact-lname" placeholder="Hassan">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" placeholder="muha@example.com">
+                            <input type="email" id="contact-email" placeholder="muha@example.com">
                         </div>
 
                         <div class="form-group">
@@ -269,40 +437,72 @@
                     </form>
                 </div>
             </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h3>Frequently Asked Questions</h3>
+                <div class="underline"></div>
+
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>How accurate is the decision helper? <i class="fas fa-chevron-down"></i></summary>
+                        <p>It uses a weighted scoring algorithm based on your inputs. While it provides a logical
+                            recommendation, the final choice is always yours.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Is my data saved? <i class="fas fa-chevron-down"></i></summary>
+                        <p>No, all decision data is processed locally in your browser. We do not store your personal
+                            choices.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I add more than two options? <i class="fas fa-chevron-down"></i></summary>
+                        <p>Currently, the helper is optimized for binary choices (A vs B) to reduce analysis paralysis.
+                            Multi-option support is coming in v2.0.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Is this service really free? <i class="fas fa-chevron-down"></i></summary>
+                        <p>Yes! The core DecisionHelper tool is 100% free to use for personal decision making.</p>
+                    </details>
+                </div>
+            </div>
         </section>
 
     </main>
 
     <footer>
-    <div class="footer-content">
-        <div class="footer-logo">
-            <i class="fas fa-sparkles"></i> DecisionHelper
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-sparkles"></i> DecisionHelper
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/Muhanad-Hassan" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
         </div>
 
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+        <div class="footer-copyright">
+            &copy; 2026 DecisionHelper. All rights reserved.
         </div>
-
-        <div class="footer-social">
-            <a href="https://github.com/Muhanad-Hassan" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://linkedin.com/in/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </div>
-
-    <div class="footer-copyright">
-        &copy; 2026 DecisionHelper. All rights reserved.
-    </div>
-</footer>
+    </footer>
 
 
     <script src="script.js"></script>
 </body>
+
 </html>
